@@ -8,7 +8,7 @@ resource "azurerm_private_dns_zone" "private_dns_zone" {
   name = var.private_dns_zone_name
 
   resource_group_name = var.existing_resource_group_name
-  tags = local.default_tags
+  tags                = local.default_tags
 
   dynamic "soa_record" {
     for_each = var.soa_record_private_dns

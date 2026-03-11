@@ -1,7 +1,7 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
- resource "azurerm_resource_group" "dns-network-rg" {
+resource "azurerm_resource_group" "dns-network-rg" {
   name     = "dns-network-rg"
   location = var.location
   tags = {
