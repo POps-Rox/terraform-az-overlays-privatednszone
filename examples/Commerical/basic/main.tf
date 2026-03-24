@@ -1,7 +1,7 @@
 
 module "mod_pdz" {
   source     = "../../.."
-  depends_on = [module.dns-network-rg]
+  depends_on = [azurerm_resource_group.dns-network-rg]
 
   # Resource Group, location, VNet and Subnet details
   location           = var.location
@@ -11,7 +11,7 @@ module "mod_pdz" {
   workload_name      = var.workload_name
 
   private_dns_zone_name        = "privatelink.database.windows.net"
-  existing_resource_group_name = module.dns-network-rg.resource_group_name
+  existing_resource_group_name = azurerm_resource_group.dns-network-rg.name
   private_dns_zone_vnets_ids = [
     azurerm_virtual_network.dns-vnet.id
   ]
